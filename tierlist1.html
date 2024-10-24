@@ -1,4 +1,11 @@
 <head>  <script>
+        
+        let originalContent;
+
+        window.onload = function() {
+            originalContent = document.getElementById('content').innerHTML;
+        };
+
         function loadContent(url) {
             fetch(url)
                 .then(response => response.text())
@@ -7,7 +14,12 @@
                 })
                 .catch(error => console.error('Error loading content:', error));
         }
-    </script></head>
+
+        function restoreOriginalContent() {
+            document.getElementById('content').innerHTML = originalContent;
+        }
+    </script>
+    </head>
 <style>.center {
     display: block;
     margin-left: auto;
