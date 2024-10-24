@@ -1,22 +1,12 @@
 <head>  <script>
         
-        let originalContent;
-
-        window.onload = function() {
-            originalContent = document.getElementById('content').innerHTML;
-        };
-
-        function loadContent(url) {
+         function loadContent(url) {
             fetch(url)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('content').innerHTML = data;
                 })
                 .catch(error => console.error('Error loading content:', error));
-        }
-
-        function restoreOriginalContent() {
-            document.getElementById('content').innerHTML = originalContent;
         }
     </script>
     </head>
@@ -28,5 +18,5 @@
   }</style>
 <body style="background-color: darkgray;">
 <img src="C:\Users\jayde\Downloads\pixeltd\image.png" class="center" alt="tierlist"></img><br>
-<button onclick="restoreOriginalContent()" class="center">home</button>
+<button  class="center">home</button>
 </body>
